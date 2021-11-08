@@ -9,7 +9,7 @@ import repositories.session_repository as session_repository
 # CREATE
 def save(attendance):
     sql = "INSERT INTO attendances (member_id, session_id) VALUES (%s, %s) RETURNING id"
-    values = [attendance.member.id], [attendance.session.id]
+    values = [attendance.member.id, attendance.session.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     attendance.id = id

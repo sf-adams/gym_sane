@@ -16,5 +16,3 @@ class TestAttendance(unittest.TestCase):
     
     def test_attendance_can_have_session(self):
         self.assertEqual(self.session, self.attendance.session)
-    
-    
