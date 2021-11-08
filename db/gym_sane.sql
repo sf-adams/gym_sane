@@ -1,7 +1,9 @@
+-- Deleting the tables in reverse order to creation
 DROP TABLE IF EXISTS attendance;
-DROP TABLE IF EXISTS classes;
+DROP TABLE IF EXISTS sessions;
 DROP TABLE IF EXISTS members;
 
+-- Members table created with the first name, last name, age and category
 CREATE TABLE members (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(255),
@@ -10,15 +12,17 @@ CREATE TABLE members (
     category VARCHAR(255)
 );
 
-CREATE TABLE classes (
+-- Sessions table created with name, time and category
+CREATE TABLE sessions (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     time VARCHAR(255),
     category VARCHAR(255)
 );
 
+-- Attendance table created to link the members and classes tables
 CREATE TABLE attendance (
     id SERIAL PRIMARY KEY,
     member_id INT REFERENCES members(id) ON DELETE CASCADE,
-    class_id INT REFERENCES classes(id) ON DELETE CASCADE
+    session_id INT REFERENCES sessions(id) ON DELETE CASCADE
 );
