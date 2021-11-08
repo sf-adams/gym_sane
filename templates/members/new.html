@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+{% block content %}
+
+<h2>Add New Member</h2>
+
+<form action="/members" method="POST">
+    <div>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name">
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name">
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age">
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category">
+        <input type="submit">
+    </div>
+</form>
+
+
+{% endblock %}
