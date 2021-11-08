@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% for sessions in sessions %}
+
+    <section>
+        <p>{{ sessions.name }}</p>
+        <p>{{ sessions.time }}</p>
+        <p>{{ sessions.category }}</p>
+    </section>
+    <hr>
+
+    {% endfor %}
+
+{% endblock %}

@@ -22,7 +22,7 @@ member_repository.save(member_2)
 member_3 = Member("Henry", "Caville", 38, "Cardio")
 member_repository.save(member_3)
 
-session_1 = Session("No Pains No Gains", "07:00", "Strength")
+session_1 = Session("No Pain No Gains", "07:00", "Strength")
 session_repository.save(session_1)
 
 session_2 = Session("Wishful Shrinking", "07:00", "Cardio")
