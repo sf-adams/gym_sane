@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% for member in members %}
+
+    <section>
+        <p>{{ member.first_name }}</p>
+        <p>{{ member.last_name }}</p>
+        <p>{{ member.age }}</p>
+        <p>{{ member.category }}</p>
+    </section>
+    <hr>
+
+    {% endfor %}
+
+{% endblock %}
