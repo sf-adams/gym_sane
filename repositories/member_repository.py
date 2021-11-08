@@ -1,7 +1,6 @@
 from db.run_sql import run_sql
 from models.member import Member
 
-
 # CREATE
 def save(member):
     sql = "INSERT INTO members (first_name, last_name, age, category) VALUES (%s, %s, %s, %s) RETURNING id"
