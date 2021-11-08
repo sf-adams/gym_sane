@@ -6,7 +6,7 @@ def save(member):
     sql = "INSERT INTO members (first_name, last_name, age, category) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [member.first_name], [member.last_name], [member.age], [member.category]
     results = run_sql(sql, values)
-    id = results[0]['id']
+    id = results[0]["id"]
     member.id = id
 
 # READ
@@ -34,7 +34,7 @@ def update(member):
 
 # DELETE
 def delete_all():
-    sql = 'DELETE FROM members'
+    sql = "DELETE FROM members"
     run_sql(sql)
 
 def delete(id):    
