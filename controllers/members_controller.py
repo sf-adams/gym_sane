@@ -30,7 +30,7 @@ def create_member():
     return redirect("/members")
 
 # EDIT
-@members_blueprint.route("/members/<id>/edit")
+@members_blueprint.route("/members/<id>/edit", methods=['GET'])
 def edit_member(id):
     title = "Edit Member"
     member = member_repository.select(id)
