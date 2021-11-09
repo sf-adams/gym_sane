@@ -29,3 +29,25 @@ def create_session():
     session_repository.save(new_session)
     return redirect("/sessions")
 
+# EDIT
+@sessions_blueprint.route("/sessions/<id>/edit", methods=['GET'])
+def edit_session(id):
+    title = "Edit Session"
+    session = session_repository.select(id)
+    return render_template("/sessions/edit.html", title=title, session=session)
+
+# UPDATE
+@sessions_blueprint.route("/sessions/<id>", methods=["POST"])
+def update_session(id):
+    name = request.form["name"]
+    time = request.form["time"]
+    category = request.form["category"]
+    session = Session(name, time, category)
+    session_repository.update(session)
+    return redirect("/sessions")
+
+# DELETE
+@sessions_blueprint.route("/sessions/<id>/delete", methods=['POST'])
+def delete_session(id):
+    session_repository.delete(id)
+    return redirect("/sessions")
