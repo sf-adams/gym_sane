@@ -1,4 +1,3 @@
-from re import S
 from flask import Blueprint, render_template, request, redirect
 
 from models.session import Session

@@ -1,17 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
+<h1>Members</h1>
 
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Category</th>
+    </tr>
     {% for member in members %}
-
-    <section>
-        <p>{{ member.first_name }}</p>
-        <p>{{ member.last_name }}</p>
-        <p>{{ member.age }}</p>
-        <p>{{ member.category }}</p>
-    </section>
-    <hr>
-
+    <tr>
+        <td><a href="/members/{{ member.id }}">{{ member.first_name }} {{ member.last_name }}</a></td>
+        <td>{{ member.age }}</td>
+        <td>{{ member.category }}</td>
+    </tr>
     {% endfor %}
+
+</table>
 
 {% endblock %}

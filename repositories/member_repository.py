@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.member import Member
+from models.session import Session
 
 # CREATE
 def save(member):
@@ -41,3 +42,17 @@ def delete(id):
     sql = "DELETE FROM members WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+# BRIDGE
+def sessions(member):
+    sessions = []
+
+    sql = "SELECT sessions.* FROM sessions INNER JOIN attendances ON attendances.session_id = sessions.id WHERE member_id = %s"
+    values = [member.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        session = Session(row['name'], row['time'], row['category'], row['id'])
+        sessions.append(session)
+
+    return sessions
