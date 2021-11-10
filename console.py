@@ -1,5 +1,3 @@
-# import pdb
-
 from models.attendance import Attendance
 import repositories.attendance_repository as attendance_repository
 
@@ -45,5 +43,3 @@ attendance_repository.save(attendance_3)
 
 attendance_4 = Attendance(member_1, session_4)
 attendance_repository.save(attendance_4)
-
-# pdb.set_trace()
