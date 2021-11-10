@@ -2,18 +2,17 @@
 {% block content %}
 
 <div>
-  <h3>{{ session.name }}</h3>
-  <hr>
-  <p>{{ session.time }}</p>
-  <p>{{ session.category }}</p>
-  <p><a href="/sessions/{{ session.id }}/edit">Edit</a></p>
+    <h3>{{ session.name }}</h3>
+    <hr>
+    <p>{{ session.time }}</p>
+    <p>{{ session.category }}</p>
+    <p><a href="/sessions/{{ session.id }}/edit">Edit</a></p>
 </div>
 
-  <h3>Members:</h3>
-
+<h3>Members:</h3>
 <ul>
     {% for member in members  %}
-    <li>{{member.name}}</li>
+    <li>{{ member.name }}</li>
     {% endfor %}
 </ul>
 
