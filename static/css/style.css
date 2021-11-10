@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 240px;
+    height: 50px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    color: white;
+  }
+
+  
+
+  /* .menu li a{
+    text-decoration: none;
+  }
+  
+  .menu li a:visited{
+    color: white;
+  }
+  
+  .menu li{
+    padding-right: 10px;
+    list-style: none;
+    color: white;
+    font-family: "Helvetica", arial, sans-serif; font-size: 14px;
+  } */
+
+.menu-links {
+    font-size: 16px;
+    text-decoration: none;
+}
