@@ -29,7 +29,7 @@
 
     .menu-links li {
         display: inline-block;
-        padding: 0px 10px;
+        padding: 5px 10px;
         position: relative;
     }
 
@@ -40,4 +40,42 @@
 
     .menu-links li a:hover {
         color: rgb(213, 16, 16);
-    }
+}
+
+/* Homepage */
+.homepage {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 10%;
+}
+
+
+.options {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.option-column {
+    flex-basis: 31%;
+    background: #b01616;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 62px;
+    font-weight: 700;
+}
+
+p {
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
