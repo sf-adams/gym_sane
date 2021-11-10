@@ -1,15 +1,22 @@
 {% extends "base.html" %}
-{% block content %}
 
+{% block content %}
+<h1>Sessions</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Time</th>
+        <th>Category</th>
+    </tr>
     {% for session in sessions %}
-        <div>
-            <section>
-                <p>{{ session.name }}</p>
-                <p>{{ session.time }}</p>
-                <p>{{ session.category }}</p>
-            </section>
-            <hr>
-        </div>
+    <tr>
+        <td><a href="/sessions/{{ session.id }}">{{ session.name }}</a></td>
+        <td>{{ session.time }}</td>
+        <td>{{ session.category }}</td>
+    </tr>
     {% endfor %}
+
+</table>
 
 {% endblock %}

@@ -1,6 +1,6 @@
-from pdb import run
 from db.run_sql import run_sql
 from models.session import Session
+from models.member import Member
 
 # CREATE
 def save(session):
@@ -42,3 +42,17 @@ def delete(id):
     sql = "DELETE FROM sessions where id = %s"
     values = [id]
     run_sql(sql, values)
+
+# BRIDGE
+def members(session):
+    members = []
+
+    sql = "SELECT members.* FROM members INNER JOIN attendances ON attendances.member_id = members.id WHERE session_id = %s"
+    values = [session.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        member = Member(row['first_name'], row['last_name'], row['age'], row['category'], row['id'])
+        members.append(member)
+
+    return members

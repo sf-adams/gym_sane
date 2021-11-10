@@ -3,6 +3,9 @@ from flask import Blueprint, render_template, request, redirect
 from models.session import Session
 import repositories.session_repository as session_repository
 
+from models.member import Member
+import repositories.member_repository as member_repository
+
 sessions_blueprint = Blueprint("sessions", __name__)
 
 # INDEX
@@ -11,6 +14,13 @@ def sessions():
     title = "Sessions"
     sessions = session_repository.select_all()
     return render_template("sessions/index.html", title=title, sessions=sessions)
+
+# SHOW
+@sessions_blueprint.route("/sessions/<id>", methods=['GET'])
+def show(id):
+    session = session_repository.select(id)
+    members = member_repository.sessions(session)
+    return render_template("sessions/show.html", session=session, members=members)
 
 # NEW
 @sessions_blueprint.route("/sessions/new")
