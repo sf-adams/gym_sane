@@ -3,15 +3,30 @@
 
 <h2>Edit Session</h2>
 
-<form action="/session/{{ session.id }}" method="POST"></form>
+
+<form action="/sessions/{{ session.id }}" method="POST">
     <div>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="{{ session.name }}">
-        <label for="time">Time:</label>
-        <input type="text" id="time" name="time" value="{{ session.time }}">
-        <label for="category">Category:</label>
-        <input type="text" id="category" name="category" value="{{ session.category }}">
-        <input type="submit">
+        <input type="text" id="name" name="name" value="{{ session.name }}" required>
     </div>
+    
+    <div>
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time" value="{{ session.time }}" required>
+    </div>
+    
+    <div>
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+        <option value="Strength">Strength</option>
+        <option value="Bodybuilding">Bodybuilding</option>
+        <option value="Cardio">Cardio</option>
+        </option>  
+        </select>
+    </div>
+    
+    <button type="submit">Make Changes</button>
+    
+    </form>
 
 {% endblock %}
