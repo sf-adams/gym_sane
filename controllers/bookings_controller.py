@@ -56,10 +56,12 @@ def edit_booking(id):
 # UPDATE
 @bookings_blueprint.route("/bookings/<id>", methods=["POST"])
 def update_booking(id):
-    member = request.form["member"]
-    session = request.form["session"]
-    new_booking = Booking(member, session)
-    booking_repository.update(new_booking)
+    member_id = request.form["member_id"]
+    session_id = request.form["session_id"]
+    member = member_repository.select(member_id)
+    session = session_repository.select(session_id)
+    booking = Booking(member, session, id)
+    booking_repository.update(booking)
     return redirect("/bookings")
 
 # DELETE
