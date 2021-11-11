@@ -6,12 +6,25 @@
 <form action="/bookings" method="POST">
     <div>
         <label for="member">Member:</label>
-        <input type="text" id="member" name="member">
-        <label for="session">Session:</label>
-        <input type="text" id="session" name="session">
-        <input type="submit">
+        <select id="member" name="member">
+          <option value="Strength">name</option>
+          <option value="Bodybuilding">name</option>
+          <option value="Cardio">name</option>
+          </option>  
+        </select>
     </div>
+    
+    <div>
+        <label for="session">Session:</label>
+        <select id="session" name="session">
+          <option value="Strength">name</option>
+          <option value="Bodybuilding">name</option>
+          <option value="Cardio">name</option>
+          </option>  
+        </select>
+    </div>
+    
+    <input type="submit">
 </form>
-
 
 {% endblock %}
