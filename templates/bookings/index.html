@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Bookings</h1>
+
+<table>
+    <tr>
+        <th>Session</th>
+        <th>Time</th>
+        <th>Category</th>
+        <th>Member</th>
+    </tr>
+    {% for booking in bookings %}
+    <tr>
+        <td><a href="/bookings/{{ booking.id }}">{{ booking.session.name }}</a></td>
+        <td>{{ booking.session.time }}</td>
+        <td>{{ booking.session.category }}</td>
+        <td>{{ booking.member.first_name }} {{ booking.member.last_name }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

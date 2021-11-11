@@ -1,5 +1,5 @@
-from models.attendance import Attendance
-import repositories.attendance_repository as attendance_repository
+from models.booking import Booking
+import repositories.booking_repository as booking_repository
 
 from models.session import Session
 import repositories.session_repository as session_repository
@@ -7,7 +7,7 @@ import repositories.session_repository as session_repository
 from models.member import Member
 import repositories.member_repository as member_repository
 
-attendance_repository.delete_all()
+booking_repository.delete_all()
 session_repository.delete_all()
 member_repository.delete_all()
 
@@ -32,14 +32,14 @@ session_repository.save(session_3)
 session_4 = Session("Superman Strength", "04:00", "Strength")
 session_repository.save(session_4)
 
-attendance_1 = Attendance(member_1, session_1)
-attendance_repository.save(attendance_1)
+booking_1 = Booking(member_1, session_1)
+booking_repository.save(booking_1)
 
-attendance_2 = Attendance(member_2, session_2)
-attendance_repository.save(attendance_2)
+booking_2 = Booking(member_2, session_2)
+booking_repository.save(booking_2)
 
-attendance_3 = Attendance(member_3, session_4)
-attendance_repository.save(attendance_3)
+booking_3 = Booking(member_3, session_4)
+booking_repository.save(booking_3)
 
-attendance_4 = Attendance(member_1, session_4)
-attendance_repository.save(attendance_4)
+booking_4 = Booking(member_1, session_4)
+booking_repository.save(booking_4)
