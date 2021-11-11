@@ -1,23 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Sessions</h1>
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Time</th>
-        <th>Category</th>
-    </tr>
-    {% for session in sessions %}
-    <tr>
-        <td><a href="/sessions/{{ session.id }}">{{ session.name }}</a></td>
-        <td>{{ session.time }}</td>
-        <td>{{ session.category }}</td>
-    </tr>
-    {% endfor %}
-</table>
-<br>
-<a href="/sessions/new">Add Session</a>
+<div class="box">
+    <h1>Sessions</h1>
+    <table class="display-table">
+        <tr class="table-header">
+            <th>Name</th>
+            <th>Time</th>
+            <th>Category</th>
+        </tr>
+        {% for session in sessions %}
+        <tr>
+            <td><a href="/sessions/{{ session.id }}">{{ session.name }}</a></td>
+            <td>{{ session.time }}</td>
+            <td>{{ session.category }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/sessions/new" class="sub-button">Add Session</a>
+</div>
+
 
 {% endblock %}

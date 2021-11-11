@@ -1,26 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Bookings</h1>
 
-<table>
-    <tr>
-        <th>Session</th>
-        <th>Time</th>
-        <th>Category</th>
-        <th>Member</th>
-    </tr>
-    {% for booking in bookings %}
-    <tr>
-        <td>{{ booking.session.name }}</a></td>
-        <td>{{ booking.session.time }}</td>
-        <td>{{ booking.session.category }}</td>
-        <td>{{ booking.member.first_name }} {{ booking.member.last_name }}</td>
-        <td><a href="/bookings/{{ booking.id }}/delete">Delete</a></td>
-    </tr>
-    {% endfor %}
-</table>
-<br>
-<a href="/bookings/new">Add Booking</a>
+<div class="box">
+    <h1>Bookings</h1>
+    <table class="display-table">
+        <tr class="table-header">
+            <th>Session</th>
+            <th>Time</th>
+            <th>Category</th>
+            <th>Member</th>
+        </tr>
+        {% for booking in bookings %}
+        <tr>
+            <tr>
+                <td>{{ booking.session.name }}</a></td>
+                <td>{{ booking.session.time }}</td>
+                <td>{{ booking.session.category }}</td>
+                <td>{{ booking.member.first_name }} {{ booking.member.last_name }}</td>
+                <td><a href="/bookings/{{ booking.id }}/delete">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="/bookings/new" class="sub-button">Add Booking</a>
+</div>
+
 
 {% endblock %}
