@@ -5,6 +5,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
-table {
+.box {
+    margin: auto;
     width: 80%;
+    align-items: center;
+    justify-content: center;
 }
+
