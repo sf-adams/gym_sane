@@ -20,6 +20,15 @@ def select_all():
         sessions.append(session)
     return sessions
 
+def select_all_by_time():
+    sessions = []
+    sql = "SELECT * FROM sessions ORDER BY time"
+    results = run_sql(sql)
+    for result in results:
+        session = Session(result["name"], result["time"], result["category"], result["id"])
+        sessions.append(session)
+    return sessions
+
 def select(id):
     sql = "SELECT * FROM sessions WHERE id = %s"
     values = [id]

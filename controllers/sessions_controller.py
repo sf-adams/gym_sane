@@ -12,7 +12,7 @@ sessions_blueprint = Blueprint("sessions", __name__)
 @sessions_blueprint.route("/sessions")
 def sessions():
     title = "Sessions"
-    sessions = session_repository.select_all()
+    sessions = session_repository.select_all_by_time()
     return render_template("sessions/index.html", title=title, sessions=sessions)
 
 # SHOW
@@ -51,12 +51,12 @@ def update_session(id):
     name = request.form["name"]
     time = request.form["time"]
     category = request.form["category"]
-    session = Session(name, time, category)
+    session = Session(name, time, category, id)
     session_repository.update(session)
     return redirect("/sessions")
 
 # DELETE
-@sessions_blueprint.route("/sessions/<id>/delete", methods=['POST'])
+@sessions_blueprint.route("/sessions/<id>/delete")
 def delete_session(id):
     session_repository.delete(id)
     return redirect("/sessions")

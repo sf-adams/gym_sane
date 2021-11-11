@@ -3,7 +3,7 @@
 
 <h2>Edit Member</h2>
 
-<form action="/members/{{ member.id }}" method="POST"></form>
+<form action="/members/{{ member.id }}" method="POST">
     <div>
         <label for="first_name">First Name:</label>
         <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}">
@@ -15,5 +15,6 @@
         <input type="text" id="category" name="category" value="{{ member.category }}">
         <input type="submit">
     </div>
+</form>
 
 {% endblock %}
