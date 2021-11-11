@@ -45,11 +45,13 @@ def create_booking():
     return redirect("/bookings")
 
 # EDIT
-@bookings_blueprint.route("/bookings/<id>/edit", methods=['GET'])
+@bookings_blueprint.route("/bookings/<id>/edit")
 def edit_booking(id):
     title = "Edit Booking"
     booking = booking_repository.select(id)
-    return render_template("/bookings/edit.html", title=title, booking=booking)
+    members = member_repository.select_all()
+    sessions = session_repository.select_all()
+    return render_template("/bookings/edit.html", title=title, booking=booking, members=members, sessions=sessions)
 
 # UPDATE
 @bookings_blueprint.route("/bookings/<id>", methods=["POST"])
