@@ -9,20 +9,31 @@
     </article>
 
     <div class="options">
-        <div class="column">
-            <img class="homepage_photo" src="{{ url_for('static', filename='img/homepage_members.png') }}" alt="Members">
+        <div class="options-col">
+            <a href="/members">
+                <img src="../static/img/homepage_members.png" alt="Members" class="opt-img">
+            </a>
+            <br>
             <h3>Members</h3>
             <p>The members section has all the details of your members, and will allow you to add or update.</p>
         </div>
-        <div class="column">
-            <img class="homepage_photo" src="{{ url_for('static', filename='img/homepage_sessions.png') }}" alt="Members">
-            <h3>Sessions</h3>
-            <p>The sessions section has all the details of your sessions, and will allow you to add or update.</p>
+        <div class="options-col">
+            <a href="/sessions">
+                <img src="../static/img/homepage_sessions.png" alt="Sessions" class="opt-img">
+            </a>
+            <br>
+            <section>
+                <h3>Sessions</h3>
+                <p>The sessions section has all the details of your sessions, and will allow you to add or update.</p>
+            </section>
         </div>
-        <div class="column">
-            <img class="homepage_photo" src="{{ url_for('static', filename='img/homepage_bookings.png') }}" alt="Members">
-            <h3>Attendances</h3>
-            <p>The attendances section allows you to see all the sessions and who is attending them.</p>
+        <div class="options-col">
+            <a href="/bookings">
+                <img src="../static/img/homepage_bookings.png" alt="Bookings" class="opt-img">
+            </a>
+            <br>
+            <h3>Bookings</h3>
+            <p>The bookings section allows you to see all the sessions and who is attending them.</p>
         </div>
     </div>
 </section>

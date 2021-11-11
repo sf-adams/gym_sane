@@ -2,7 +2,7 @@
     width: 80%;
     margin: auto;
     text-align: center;
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 /* .options-title {
@@ -16,7 +16,7 @@
     justify-content: space-between;
 }
 
-.column {
+.options-col {
     flex-basis: 31%;
     border-radius: 10px;
     margin-bottom: 5%;
@@ -24,10 +24,14 @@
     position: relative;
 }
 
-.option-column img {
+.opt-img {
     width: 100%;
     border-radius: 10px;
   }
+
+.options-col section {
+    padding-top: 5px;
+}
 
 h1 {
     font-size: 62px;
@@ -41,3 +45,4 @@ p {
     line-height: 22px;
     padding: 10px;
 }
+
