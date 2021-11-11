@@ -6,12 +6,16 @@
 <table>
     <tr>
         <th>Session</th>
+        <th>Time</th>
+        <th>Category</th>
         <th>Member</th>
     </tr>
     {% for booking in bookings %}
     <tr>
-        <td><a href="/bookings/{{ booking.id }}">{{ booking.session }}</a></td>
-        <td>{{ booking.member }}</td>
+        <td><a href="/bookings/{{ booking.id }}">{{ booking.session.name }}</a></td>
+        <td>{{ booking.session.time }}</td>
+        <td>{{ booking.session.category }}</td>
+        <td>{{ booking.member.first_name }} {{ booking.member.last_name }}</td>
     </tr>
     {% endfor %}
 

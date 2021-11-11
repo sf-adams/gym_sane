@@ -1,16 +1,14 @@
 {% extends "base.html"%}
 {% block content %}
 
-<h2>Add New Session</h2>
+<h2>Add New Booking</h2>
 
-<form action="/sessions" method="POST">
+<form action="/bookings" method="POST">
     <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
-        <label for="time">Time:</label>
-        <input type="text" id="time" name="time">
-        <label for="category">Category:</label>
-        <input type="text" id="category" name="category">
+        <label for="member">Member:</label>
+        <input type="text" id="member" name="member">
+        <label for="session">Session:</label>
+        <input type="text" id="session" name="session">
         <input type="submit">
     </div>
 </form>
