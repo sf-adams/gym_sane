@@ -39,7 +39,7 @@ def select(id):
 # UPDATE
 def update(session):
     sql = "UPDATE sessions SET (name, time, category) = (%s, %s, %s) WHERE id = %s"
-    values = [session.name, session.time, session.category]
+    values = [session.name, session.time, session.category, session.id]
     run_sql(sql, values)
 
 # DELETE

@@ -30,7 +30,7 @@ def select(id):
 # UPDATE
 def update(member):
     sql = "UPDATE members SET (first_name, last_name, age, category) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [member.first_name, member.last_name, member.age, member.category]
+    values = [member.first_name, member.last_name, member.age, member.category, member.id]
     run_sql(sql, values)
 
 # DELETE
