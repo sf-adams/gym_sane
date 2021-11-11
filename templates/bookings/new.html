@@ -4,36 +4,12 @@
 <h2>Add New Booking</h2>
 
 <form action="/bookings" method="POST">
-    <div>
-        <label for="member">Member:</label>
-        <select id="member" name="member">
-          <option value="Strength">name</option>
-          <option value="Bodybuilding">name</option>
-          <option value="Cardio">name</option>
-          </option>  
-        </select>
-    </div>
-    
-    <div>
-        <label for="session">Session:</label>
-        <select id="session" name="session">
-          <option value="Strength">name</option>
-          <option value="Bodybuilding">name</option>
-          <option value="Cardio">name</option>
-          </option>  
-        </select>
-    </div>
-    
-    <input type="submit">
-</form>
-
-<form action="/bookings" method="POST">
   <div>
       <label for="member">Member:</label>
       <select name="member_id" id="member">
           {% for member in members %}
           <option value="{{ member.id }}">
-              {{ member.name }}
+              {{ member.first_name }} {{ member.last_name}}
           </option>
           {% endfor %}
       </select>
