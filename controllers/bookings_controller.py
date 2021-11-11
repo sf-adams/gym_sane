@@ -19,11 +19,10 @@ def bookings():
 # SHOW
 @bookings_blueprint.route("/bookings/<id>", methods=['GET'])
 def show(id):
-    member_id = request.form["member_id"]
-    session_id = request.form["session_id"]
-    member = member_repository.select(member_id)
-    session = session_repository.select(session_id)
-    return render_template("bookings/show.html", member=member, session=session)
+    title = "Booking"
+    member = member_repository.select(id)
+    session = session_repository.select(id)
+    return render_template("bookings/show.html", title=title, member=member, session=session)
 
 # NEW
 @bookings_blueprint.route("/bookings/new")

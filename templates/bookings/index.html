@@ -12,10 +12,11 @@
     </tr>
     {% for booking in bookings %}
     <tr>
-        <td><a href="/bookings/{{ booking.id }}">{{ booking.session.name }}</a></td>
+        <td>{{ booking.session.name }}</a></td>
         <td>{{ booking.session.time }}</td>
         <td>{{ booking.session.category }}</td>
         <td>{{ booking.member.first_name }} {{ booking.member.last_name }}</td>
+        <td><a href="/bookings/{{ booking.id }}/delete">Delete</a></td>
     </tr>
     {% endfor %}
 </table>

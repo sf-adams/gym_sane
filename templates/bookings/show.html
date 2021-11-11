@@ -6,15 +6,11 @@
     <hr>
     <p>{{ session.time }}</p>
     <p>{{ session.category }}</p>
-    <p><a href="/sessions/{{ session.id }}/edit">Edit</a></p>
-    <p><a href="/sessions/{{ session.id }}/delete">Delete</a></p>
+    <p><a href="/bookings/{{ session.id }}/edit">Edit</a></p>
+    <!-- <p><a href="/bookings/{{ booking.id }}/delete">Delete</a></p> -->
 </div>
 
-<h3>Members:</h3>
-<ul>
-    {% for member in members  %}
-    <li>{{ member.first_name }} {{ member.last_name }}</li>
-    {% endfor %}
-</ul>
+<h3>Member:</h3>
+<p>{{ booking.member.first_name }} {{ booking.member.last_name }}</p>
 
 {% endblock %}
