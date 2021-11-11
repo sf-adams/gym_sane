@@ -1,32 +1,33 @@
 {% extends "base.html"%}
 {% block content %}
 
-<h2>Add New Booking</h2>
-
-<form action="/bookings" method="POST">
-  <div>
-      <label for="member">Member:</label>
-      <select name="member_id" id="member">
-          {% for member in members %}
-          <option value="{{ member.id }}">
-              {{ member.first_name }} {{ member.last_name}}
-          </option>
-          {% endfor %}
-      </select>
-  </div>
-  <div>
-      <label for="session">Session:</label>
-      <select name="session_id" id="session">
-          {% for session in sessions %}
-          <option value="{{ session.id }}">
-              {{ session.name }}
-          </option>
-          {% endfor %}
-      </select>
-  </div>
-  <div>
-      <input type="submit">
-  </div>
-</form>
+<section class="box">
+    <h2>Add New Booking</h2>
+    <form action="/bookings" method="POST" class="main-details">
+        <div>
+            <label for="member">Member:</label>
+            <select name="member_id" id="member">
+                {% for member in members %}
+                <option value="{{ member.id }}">
+                    {{ member.first_name }} {{ member.last_name}}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="session">Session:</label>
+            <select name="session_id" id="session">
+                {% for session in sessions %}
+                <option value="{{ session.id }}">
+                    {{ session.name }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    
+        <button type="submit" class="sub-button">Add Booking</button>
+    
+      </form>
+  </section>
 
 {% endblock %}
