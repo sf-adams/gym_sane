@@ -3,18 +3,34 @@
 
 <h2>Edit Member</h2>
 
-<form action="/members/{{ member.id }}" method="POST">
+<form action="/members/{{ member.id }}" method="post">
     <div>
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}">
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name" value="{{ member.last_name }}">
-        <label for="age">Age:</label>
-        <input type="text" id="age" name="age" value="{{ member.age }}">
-        <label for="category">Category:</label>
-        <input type="text" id="category" name="category" value="{{ member.category }}">
-        <input type="submit">
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}" required>
     </div>
-</form>
+  
+    <div>
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" name="last_name" value="{{ member.last_name }}" required>
+    </div>
+
+    <div>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" value="{{ member.age }}" required>
+    </div>
+  
+    <div>
+      <label for="category">Category:</label>
+      <select id="category" name="category">
+        <option value="Strength">Strength</option>
+        <option value="Bodybuilding">Bodybuilding</option>
+        <option value="Cardio">Cardio</option>
+        </option>  
+      </select>
+    </div>
+  
+    <button type="submit">Make Changes</button>
+  
+  </form>
 
 {% endblock %}

@@ -52,7 +52,7 @@ def edit_member(id):
 def update_member(id):
     first_name = request.form["first_name"]
     last_name = request.form["last_name"]
-    age = request.form["age"]
+    age = int(request.form["age"])
     category = request.form["category"]
     member = Member(first_name, last_name, age, category, id)
     member_repository.update(member)
