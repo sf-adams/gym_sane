@@ -1,5 +1,5 @@
 -- Deleting the tables in reverse order to creation
-DROP TABLE IF EXISTS attendances;
+DROP TABLE IF EXISTS bookings;
 DROP TABLE IF EXISTS sessions;
 DROP TABLE IF EXISTS members;
 
@@ -21,7 +21,7 @@ CREATE TABLE sessions (
 );
 
 -- Attendance table created to link the members and classes tables
-CREATE TABLE attendances (
+CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
     member_id INT REFERENCES members(id) ON DELETE CASCADE,
     session_id INT REFERENCES sessions(id) ON DELETE CASCADE
