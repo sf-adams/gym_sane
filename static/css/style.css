@@ -14,3 +14,19 @@
     justify-content: center;
 }
 
+a {
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+
+a:link {
+color: black;
+}
+
+a:visited {
+color: black;
+}
+
+a:hover {
+  color: rgb(213, 16, 16);
+}

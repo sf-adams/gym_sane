@@ -32,7 +32,7 @@
 
 .sub-button {
     background: #ff5029;
-    color: #fff;
+    color: #fff !important;
     padding: 5px 20px;
     font-size: 16px;
     border: 0;
