@@ -7,7 +7,6 @@
 
 .box {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     margin: 0 auto;
     width: 80%;
