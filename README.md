@@ -8,7 +8,7 @@ A gym administration app for handling members, sessions and bookings.
 <br>
 <strong><em>Insane in the membrane, gymsane in the brain.</em></strong>
 
-<!-- <img src = "static/demo_part_one.gif" width ="400" /> <img src = "static/demo_part_two.gif" width ="400" /> -->
+<img src = "static/img/demo_part_one.gif" width ="400" /> <img src = "static/img/demo_part_two.gif" width ="400" />
 
 [Report Issue](https://github.com/sf-adams/gym_sane/issues)
 
